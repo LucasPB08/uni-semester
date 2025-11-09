@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:studyguide.tudelft.nl)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_wait_for"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
