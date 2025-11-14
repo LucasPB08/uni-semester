@@ -13,34 +13,52 @@ This course provides a comprehensive introduction to functional programming, foc
 
 Functional programming represents a fundamentally different paradigm from imperative and object-oriented programming. This course aims to shift students' thinking from "how to do something" (imperative) to "what something is" (declarative). Students will learn to think in terms of transformations, compositions, and mathematical functions rather than sequential state changes.
 
+### Why Study Functional Programming?
+
+- **High-level abstraction:** Model the real world at a high level to develop software that is clear, concise, and correct
+- **Better programming skills:** Learning FP teaches new ways to think about programs, making you a better programmer in any language
+- **Growing relevance:** FP languages are increasingly commonplace, and mainstream languages are integrating more functional features (lambdas, higher-order functions, pattern matching, immutable data)
+- **Program correctness:** Pure functional programming makes it easy to reason about correctness using equational reasoning, property-based testing, and formal verification
+- **Confidence in refactoring:** Static typing and immutability allow quick changes and refactoring with confidence
+- **Future of programming:** FP languages like Haskell and Agda include recent developments from PL research that typically take 10-30 years to reach mainstream languages
+
 ## Learning Objectives
 
 ### Haskell
 By the end of this course, students will be able to:
 - Write idiomatic Haskell programs using functional programming principles
+- **Manipulate and return functions as first-class data** (first-class functions)
 - Understand and apply core functional concepts:
   - Immutability and referential transparency
   - Pure functions and side effect management
   - Pattern matching and recursion
   - Higher-order functions (map, filter, fold, etc.)
   - Lazy evaluation
+- **Define and manipulate custom data structures** using algebraic datatypes, pattern matching, and recursion
 - Work effectively with Haskell's type system:
   - Type inference and type signatures
   - Algebraic data types
   - Type classes and polymorphism
+  - Type parameters for generic programming
+- **Automatically test important properties** of programs using QuickCheck (property-based testing)
+- **Avoid code duplication** and write code at higher levels of abstraction using type parameters and type classes
+- **Program with infinite data structures** by relying on lazy evaluation and avoiding unnecessary computation
 - Apply functional design patterns:
   - Functors and Applicatives
   - Monads for managing effects
   - Function composition and point-free style
+- **Distinguish between pure and impure computations** and use monads to make this difference explicit
 - Understand list comprehensions and their applications
-- Define custom types and type classes
 
 ### Agda
-Students will also gain exposure to:
-- Dependent type systems
-- Proof-driven development
-- The Curry-Howard correspondence
-- Verification of program correctness through types
+Students will also learn to:
+- **Express logical properties as types** through the Curry-Howard correspondence
+- **Develop Agda programs interactively** with the typechecker and detect errors while writing the program
+- **Enforce invariants at the type level** by using indexed datatypes and dependent pattern matching
+- **Formally prove properties** of purely functional programs using the identity type and equational reasoning
+- Work with dependent type systems
+- Apply proof-driven development techniques
+- Verify program correctness through types
 
 ## Teaching Methods
 
@@ -151,11 +169,15 @@ Students will also gain exposure to:
 - Monads and do-notation
 - Error handling in functional style
 - Lazy evaluation and infinite structures
+- Property-based testing with QuickCheck
 
 ### Part 4: Dependent Types and Agda (Week 8)
 - Introduction to Agda
 - Dependent type systems
 - Curry-Howard correspondence
+- Interactive development with the Agda typechecker
+- Indexed datatypes and dependent pattern matching
+- Identity type and equational reasoning
 - Proofs as programs
 
 ## Software Requirements
@@ -163,11 +185,12 @@ Students will also gain exposure to:
 ### Required Installation
 - **GHC (Glasgow Haskell Compiler):** Latest stable version
 - **Cabal or Stack:** Haskell build tools
+- **QuickCheck:** Property-based testing library
 - **Text Editor/IDE:**
   - VSCode with Haskell extension
   - IntelliJ with Haskell plugin
   - Emacs/Vim with appropriate plugins
-- **Agda:** For dependent types section
+- **Agda:** For dependent types section (with Agda mode for your editor)
 
 ### Recommended Setup
 - Linux, macOS, or WSL on Windows for best compatibility
