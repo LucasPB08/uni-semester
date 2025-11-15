@@ -180,18 +180,6 @@ Students will also learn to:
 - Identity type and equational reasoning
 - Proofs as programs
 
-## Software Requirements
-
-### Required Installation
-- **GHC (Glasgow Haskell Compiler):** Latest stable version
-- **Cabal or Stack:** Haskell build tools
-- **QuickCheck:** Property-based testing library
-- **Text Editor/IDE:**
-  - VSCode with Haskell extension
-  - IntelliJ with Haskell plugin
-  - Emacs/Vim with appropriate plugins
-- **Agda:** For dependent types section (with Agda mode for your editor)
-
 ### Recommended Setup
 - Linux, macOS, or WSL on Windows for best compatibility
 - Command-line familiarity for GHCi (interactive Haskell)
@@ -214,10 +202,3 @@ Students will also learn to:
 - **Embrace recursion:** It replaces loops in functional programming
 - **Read code:** Understanding others' Haskell improves your own
 - **Ask for help:** Functional programming requires a mental shift - seek support when stuck
-
-## Registration and Contact
-
-**Registration:** Via TU Delft student portal
-**Course Start:** Mid-February 2025 (Q3)
-**Department:** Computer Science and Engineering
-**Contact:** Check course page for instructor details and office hours
