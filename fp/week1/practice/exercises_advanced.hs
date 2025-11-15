@@ -187,7 +187,7 @@ Type Signature: [(a, b)] -> ([a], [b])
 -}
 
 unzipPairs :: [(a, b)] -> ([a], [b])
-unzipPairs [] = []
+unzipPairs [] = ([], [])
 unzipPairs ((x, y) : rest) = (x : xs, y : ys)
   where (xs, ys) = unzipPairs rest
 
