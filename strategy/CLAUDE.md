@@ -8,9 +8,10 @@ Extract key concepts from textbook screenshots and generate both study notes and
 **Each week:**
 1. User provides screenshots of assigned chapters/sections
 2. Agent extracts content → creates structured notes in `week-X/notes.md`
-3. Agent generates Quizlet-ready flashcards → `week-X/flashcards.md`
-4. User copies flashcards to Quizlet for spaced repetition
-5. Check off completed week below
+3. **User reviews notes and provides feedback/approval**
+4. **ONLY AFTER notes are finalized:** Agent generates Quizlet-ready flashcards → `week-X/flashcards.md`
+5. User copies flashcards to Quizlet for spaced repetition
+6. Check off completed week below
 
 ## Note Structure
 
@@ -20,15 +21,23 @@ For each chapter/section, organize as:
 - **Key Concepts** - Main ideas explained concisely
 - **Examples** - Real companies/cases mentioned (useful for flashcard context)
 
-## Flashcard Format
+## Flashcard Guidelines
 
-Simple Q&A pairs ready to copy into Quizlet:
+**IMPORTANT - Quantity:**
+- Target: **15-20 flashcards per week**
+- Variation: ±10 cards (acceptable range: 5-30 cards)
+- Quality over quantity - focus on the most important concepts only
+
+**Format - Quizlet Import Ready:**
+- Use **tab character** to separate question and answer (for Quizlet import)
+- One card per line
+- Keep answers concise (1-3 lines maximum)
+
+**Example format:**
 ```
-Q: What are Porter's Five Forces?
-A: 1) Threat of new entrants, 2) Bargaining power of suppliers, 3) Bargaining power of buyers, 4) Threat of substitutes, 5) Rivalry among existing competitors
-
-Q: What is strategic positioning?
-A: [Definition extracted from text]
+What are Porter's Five Forces?	1) Threat of new entrants, 2) Bargaining power of suppliers, 3) Bargaining power of buyers, 4) Threat of substitutes, 5) Rivalry among existing competitors
+What is strategic positioning?	Deliberately choosing a different set of activities to deliver a unique mix of value
+What is competitive advantage?	That which differentiates an organization from its competitors in the eyes of customers
 ```
 
 ## File Organization
