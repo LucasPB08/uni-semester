@@ -207,7 +207,7 @@ Type Signature: [[a]] -> [a]
 -}
 
 concatLists :: [[a]] -> [a]
-concatLists = undefined
+concatLists = foldr (\el acc -> el ++ acc) []
 
 
 -- ============================================================================
@@ -239,7 +239,7 @@ Type Signature: [Int] -> Int
 -}
 
 sumOfSquaresOfEvens :: [Int] -> Int
-sumOfSquaresOfEvens = undefined
+sumOfSquaresOfEvens = sum . map (^2) . filter even
 
 
 -- ============================================================================
@@ -267,7 +267,7 @@ Type Signature: (a -> Bool) -> [a] -> Bool
 -}
 
 anyList :: (a -> Bool) -> [a] -> Bool
-anyList = undefined
+anyList a = foldr (\el acc -> pred a || acc) false
 
 
 -- ============================================================================
@@ -295,8 +295,7 @@ Type Signature: (a -> Bool) -> [a] -> Bool
 -}
 
 allList :: (a -> Bool) -> [a] -> Bool
-allList = undefined
-
+allList a = foldr (\el acc -> pred a && cc) false
 
 -- ============================================================================
 -- BONUS Exercise 11: takeWhile Using Fold
@@ -328,7 +327,7 @@ Type Signature: (a -> Bool) -> [a] -> [a]
 -}
 
 takeWhileList :: (a -> Bool) -> [a] -> [a]
-takeWhileList = undefined
+takeWhileList pred = foldr (\el acc -> if pred el then x : acc else [])
 
 
 -- ============================================================================
@@ -357,7 +356,9 @@ Type Signature: (a -> b -> c) -> [a] -> [b] -> [c]
 -}
 
 zipWithList :: (a -> b -> c) -> [a] -> [b] -> [c]
-zipWithList = undefined
+zipWithList fun _ [] = []
+zipWithList fun [] _ = []
+zipWithList fun (x:xs) (y:ys) = (fun x y) : zipWithList fun xs ys
 
 
 -- ============================================================================
@@ -404,7 +405,7 @@ toUpperStr :: String -> String
 toUpperStr = map toUpper
 
 processWords :: [String] -> String
-processWords = undefined
+processWords = intercalate " " . sort . toUpperStr . filter . length 
 
 
 -- ============================================================================
@@ -438,7 +439,7 @@ Type Signature: [Int] -> (Int, Int)
 -}
 
 countEvenOdd :: [Int] -> (Int, Int)
-countEvenOdd = undefined
+countEvenOdd = foldl (\acc, el -> if even el then (fst acc + 1, snd acc) else (fst acc, snd acc + 1))
 
 
 -- ============================================================================
@@ -471,7 +472,14 @@ Type Signature: Eq a => [a] -> [[a]]
 -}
 
 groupConsecutive :: Eq a => [a] -> [[a]]
-groupConsecutive = undefined
+groupConsecutive = foldr 
+(\el acc -> 
+  if head $ head acc == el 
+    then 
+      el : head acc $ tail acc 
+    else
+      [el] : acc
+       ) []
 
 
 -- ============================================================================

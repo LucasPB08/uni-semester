@@ -23,6 +23,40 @@ reverseList = foldl (\acc el -> el : acc) []
 maximumList :: [Int] -> Int
 maximumList (x:xs) = foldl max x xs
 
+concatLists :: [[a]] -> [a]
+concatLists = foldr (\el acc -> el ++ acc) []
+
+
+sumOfSquaresOfEvens :: [Int] -> Int
+sumOfSquaresOfEvens = sum . map (^2) . filter even
+
+anyList :: (a -> Bool) -> [a] -> Bool
+anyList a = foldr (\el acc -> pred a || acc) false
+
+allList :: (a -> Bool) -> [a] -> Bool
+allList a = foldr (\el acc -> pred a && cc) false
+
+takeWhileList :: (a -> Bool) -> [a] -> [a]
+takeWhileList pred = foldr (\el acc -> if pred el then x : acc else [])
+
+zipWithList :: (a -> b -> c) -> [a] -> [b] -> [c]
+zipWithList fun _ [] = []
+zipWithList fun [] _ = []
+zipWithList fun (x:xs) (y:ys) = (fun x y) : zipWithList fun xs ys
+
+toUpperStr :: String -> String
+toUpperStr = map toUpper
+
+processWords :: [String] -> String
+processWords = intercalate " " . sort . toUpperStr . filter (\el -> length el > 3)
+
+countEvenOdd :: [Int] -> (Int, Int)
+countEvenOdd = foldl (\acc el -> if even el then (fst acc + 1, snd acc) else (fst acc, (snd acc) + 1)) (0, 0)
+
+
+groupConsecutive :: Eq a => [a] -> [[a]]
+groupConsecutive = foldr (\el acc -> if head (head acc) == el then (el : head acc) : tail acc else [el] : acc) []
+
 -- Test Helper Functions
 testCase :: (Eq a, Show a) => String -> a -> a -> IO ()
 testCase name expected actual =

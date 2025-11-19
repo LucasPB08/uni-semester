@@ -55,9 +55,6 @@ For each exercise provide:
 **Examples:**
 [Input/output examples]
 
-**Hints:** (optional, only for harder problems)
-[Subtle hints if needed]
-
 **Type Signature:** (provide or ask me to determine)
 [Function type signature]
 ```
