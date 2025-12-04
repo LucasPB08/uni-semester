@@ -59,26 +59,31 @@ For each exercise provide:
 [Function type signature]
 ```
 
-### 4. Difficulty Calibration by Schedule Phase
+### 4. Difficulty Calibration by Course Week
 
-#### Phase 1: Foundations (Chapters 1-4)
+#### Week 3.1: Basics
 - **Focus:** Basic syntax, simple recursion, pattern matching, list operations
 - **Examples:** List length, sum, reverse, filter by condition
 - **Avoid:** Higher-order functions, complex type classes, monads
 
-#### Phase 2: Core Concepts (Chapters 5-8)
-- **Focus:** List comprehensions, higher-order functions, custom types, type classes
+#### Week 3.2: Data Types + HOFs
+- **Focus:** Algebraic data types, higher-order functions, composition
 - **Examples:** Map/filter/fold exercises, custom data types, tree operations
-- **Introduce:** Function composition, partial application
+- **Introduce:** Function composition, partial application, point-free style
 
-#### Phase 3: Advanced FP (Chapters 9-15)
-- **Focus:** Functors, Applicatives, Monads, lazy evaluation
-- **Examples:** Custom monads, parser combinators, infinite structures
-- **Challenge:** Combining multiple concepts
+#### Week 3.3: Type Classes, Functors, IO
+- **Focus:** Type classes (Eq, Ord, Show, Functor), fmap, basic IO
+- **Examples:** Generic functions with constraints, Functor instances
+- **Introduce:** Pure vs impure, IO actions
 
-#### Phase 4: Agda (Week 8)
+#### Week 3.4: Monads + Lazy Evaluation
+- **Focus:** Monads (Maybe, List, IO), do-notation, lazy evaluation
+- **Examples:** Monadic chains, infinite structures, custom monads
+- **Challenge:** Combining multiple effects
+
+#### Weeks 3.6-3.7: Agda
 - **Focus:** Dependent types, proofs as programs
-- **Examples:** Type-safe operations, verified properties
+- **Examples:** Type-safe operations, verified properties, equational reasoning
 - **Note:** Only start Agda exercises when explicitly requested
 
 ### 5. Exercise Quantity
@@ -132,112 +137,123 @@ For each exercise provide:
 - IO monad (side effects)
 - Do-notation
 
-## Course Schedule Reference
+## Course Schedule Reference (Official)
 
-### Weeks 1-3: Foundations (Hutton Chapters 1-4)
-**Part 1: Foundations**
+**Note:** Course runs Q3 (mid-Feb to April). Weeks are numbered 3.1-3.10.
+
+### Week 3.1: Haskell Basics
+**Topics:** Types, lists, functions
 - Introduction to functional programming paradigm
-  - Immutability and referential transparency
-  - Pure functions vs side effects
-  - Declarative thinking ("what" vs "how")
 - Haskell basics: expressions, functions, types
-  - Type inference and type signatures
-  - First-class functions
+- Type inference and type signatures
 - List operations and pattern matching
-  - List patterns ([], x:xs)
-  - Guards vs patterns
-  - As-patterns (@)
-- Recursion fundamentals
-  - Base cases and recursive cases
-  - Structural recursion on lists
-  - Multiple recursive calls
+- Basic recursion fundamentals
 
-**Key Hutton Chapters:**
-- Chapter 1: Introduction
-- Chapter 2: First steps
-- Chapter 3: Types and classes
-- Chapter 4: Defining functions
+**Key Hutton Chapters:** 1-4
 
-### Weeks 4-5: Core Concepts (Hutton Chapters 5-8)
-**Part 2: Core Concepts**
-- Higher-order functions
-  - map, filter, fold (left and right)
-  - Function composition (.) and point-free style
-  - Partial application
-  - Creating custom higher-order functions
-- List comprehensions
-  - Generators and guards
-  - Multiple generators
-  - Dependent generators
+### Week 3.2: Data Types and Higher-Order Functions
+**Topics:** Data types, higher-order functions
+**Project:** Part 1 - Representing JSON
+
+- Algebraic data types (sum and product types)
+- Higher-order functions: map, filter, fold
+- Function composition and point-free style
+- Partial application and currying
 - Custom type definitions
-  - Algebraic data types (product and sum types)
-  - Recursive data structures (trees, etc.)
-  - Pattern matching on custom types
-- Type classes and polymorphism
-  - Type parameters for generic programming
-  - Understanding Eq, Ord, Show
-  - Polymorphic types and type variables
 
-**Key Hutton Chapters:**
-- Chapter 5: List comprehensions
-- Chapter 6: Recursive functions
-- Chapter 7: Higher-order functions
-- Chapter 8: Declaring types and classes
+**Key Hutton Chapters:** 5-8
 
-### Weeks 6-7: Advanced Functional Programming (Hutton Chapters 9-15)
-**Part 3: Advanced FP**
-- Functors and Applicatives
-  - Functor typeclass (fmap)
-  - Applicative typeclass and patterns
-  - Using functors and applicatives in practice
-- Monads and do-notation
-  - Monad typeclass (>>=, return)
-  - Maybe monad (error handling)
-  - List monad (nondeterminism)
-  - IO monad (side effects)
-  - Do-notation syntax
-  - Distinguishing pure vs impure computations
-- Error handling in functional style
-  - Maybe and Either types
-  - Propagating errors through monadic chains
+### Week 3.3: Type Classes, Functors, IO
+**Topics:** Type classes, functors, IO
+
+- Type classes: Eq, Ord, Show, Functor
+- Polymorphism and type constraints
+- Understanding Functor typeclass (fmap)
+- Introduction to IO monad
+- Pure vs impure computations
+
+**Key Hutton Chapters:** 8, 10, 12
+
+### Week 3.4: Monads and Lazy Evaluation
+**Topics:** Monads, lazy evaluation
+**Project:** Part 2 - Working with filters
+
+- Monad typeclass (>>=, return)
+- Maybe monad (error handling)
+- List monad (nondeterminism)
+- IO monad (side effects)
+- Do-notation syntax
 - Lazy evaluation and infinite structures
-  - Understanding lazy evaluation
-  - Programming with infinite data structures
-  - Take/drop patterns
-  - Efficiency through laziness
-- Property-based testing with QuickCheck
-  - Automatically testing important properties
-  - Writing property specifications
-  - Generators for test data
+- Take/drop patterns
 
-**Key Hutton Chapters:**
-- Chapter 9-15: Advanced topics including monads, functors, lazy evaluation, reasoning about programs
+**Key Hutton Chapters:** 9-12, 15
 
-### Week 8: Dependent Types and Agda
-**Part 4: Agda**
+### Week 3.5: Project Preparation
+**Topics:** [preparation for research project]
+
+- Apply learned concepts to project
+- Review and consolidate Haskell knowledge
+- Prepare for Agda transition
+
+### Week 3.6: Agda Basics
+**Topics:** Dependent types, totality
+**Project:** Part 3 - Parsing
+
 - Introduction to Agda
-  - Moving from Haskell to Agda
-  - Agda syntax and interactive development
+- Moving from Haskell to Agda
 - Dependent type systems
-  - Types that depend on values
-  - Indexed datatypes
+- Types that depend on values
+- Totality checking
+- Interactive development with Agda typechecker
+
+### Week 3.7: Propositions as Types
+**Topics:** Propositions-as-types, equational reasoning
+
 - Curry-Howard correspondence
-  - Expressing logical properties as types
-  - Propositions as types, proofs as programs
-- Interactive development with the Agda typechecker
-  - Developing programs interactively
-  - Type-driven development
-  - Detecting errors while writing programs
+- Expressing logical properties as types
+- Propositions as types, proofs as programs
 - Indexed datatypes and dependent pattern matching
-  - Enforcing invariants at the type level
-  - Type-safe operations
 - Identity type and equational reasoning
-  - Formally proving properties of functional programs
-  - Equational reasoning techniques
-  - Verified program correctness
-- Proofs as programs
-  - Writing proofs in Agda
-  - Constructive mathematics
+- Formal proofs of program properties
+
+### Week 3.8: Recap and Q&A
+**Topics:** Review session
+**Project:** Part 4 - Optional extensions
+
+- Consolidate all concepts
+- Q&A and exam preparation
+
+### Week 3.9: Final Exam (Weblab)
+
+### Week 3.10: Project Deadline
+
+---
+
+## JQ Project Overview
+
+The course includes a programming project building a **jq-like JSON processor**:
+
+| Week | Project Part |
+|------|--------------|
+| 3.2 | Part 1: Representing JSON |
+| 3.4 | Part 2: Working with filters |
+| 3.6 | Part 3: Parsing |
+| 3.8 | Part 4: Optional extensions |
+| 3.10 | **Project deadline** |
+
+---
+
+## Preparation Mapping (Q2 → Q3)
+
+**Your Q2 practice weeks map to actual course weeks:**
+| Your Practice | Maps To | Status |
+|---------------|---------|--------|
+| Week 1 (basics, recursion, patterns) | Week 3.1 | Covered |
+| Week 2 (HOFs, partial application, composition) | Week 3.2 | Covered |
+| Week 3 (trees, type classes, polymorphism) | Week 3.2-3.3 | Partial |
+| Week 4 (functors, IO) | Week 3.3 | Not started |
+| Week 5 (monads, lazy eval) | Week 3.4 | Not started |
+| Week 6-7 (Agda) | Week 3.6-3.7 | Not started |
 
 ## Project Structure
 
