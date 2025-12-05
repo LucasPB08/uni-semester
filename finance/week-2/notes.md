@@ -55,15 +55,22 @@
 
 ### 3. Annuities (Level Stream for Limited Years)
 
+**What is C?** C = Cash flow per period (the fixed payment you receive/pay each year, month, etc.)
+
 **Present Value of Annuity:**
 - PV = C × [1/r - 1/(r × (1+r)^t)]
-- Or using annuity factor tables
+- This tells you what the stream of payments is worth TODAY
 
 **Future Value of Annuity:**
-- FV = sum of future value of each cash payment
-- Use shortcut formulas for calculations
+- FV = C × [(1+r)^t - 1] / r
+- This tells you what the stream of payments will be worth at the END (after t periods)
 
-**Example:** If you receive $100/year for 3 years at 5% interest, calculate PV using annuity formula.
+**Key Insight:** PV is always LESS than the sum of nominal payments because future money is worth less than money today (time value of money).
+
+**Example:** $500/year for 3 years at 6%:
+- Total nominal payments = $1,500
+- PV = $500 × 2.673 = $1,336.51 (less than $1,500!)
+- FV = $500 × 3.183 = $1,591.65 (more than $1,500 due to compounding)
 
 ### 4. Perpetuities (Level Stream Forever)
 
@@ -71,7 +78,17 @@
 - PV = C / r
 - Where C = cash payment per period
 
-**Example:** A perpetuity paying $100/year at 5% has PV = $100/0.05 = $2,000
+**Why is Perpetuity PV > Annuity PV?**
+- Perpetuity = infinite payments forever
+- Annuity = limited number of payments
+- Getting paid forever is worth more than getting paid for a limited time!
+
+**Example:** C = $100/year at 5%:
+- 10-year annuity PV = $772
+- Perpetuity PV = $100/0.05 = $2,000 (much larger!)
+
+**Key Relationship:** Perpetuity = Annuity as t → ∞
+- As the annuity gets longer, it approaches the perpetuity value
 
 ### 5. Finding Interest Rate from PV/FV (LO4)
 
@@ -106,6 +123,147 @@
 - Example: 1% per month compounded = (1.01)^12 - 1 = 12.68% EAR
 
 **Key Point:** EAR is always ≥ APR when compounding occurs more than once per year.
+
+---
+
+## Understanding Annuities and Perpetuities: The Math Behind the Formulas
+
+### Why Present Value < Future Value (Always!)
+
+**Core Principle:** Money today is worth MORE than the same amount in the future because you can invest it and earn interest.
+
+**Example:**
+- Would you rather have $1,000 today or $1,000 in 5 years?
+- Obviously today! You could invest it at 6% and have $1,338 in 5 years.
+- Therefore, $1,000 in 5 years is only worth $747 today (at 6% discount rate).
+
+**Present Value is ALWAYS less than the sum of future nominal payments** because we discount future payments.
+
+### Deriving the Annuity PV Formula (Geometric Series)
+
+An annuity is just multiple payments, so we could calculate each one:
+
+```
+PV = C/(1+r)¹ + C/(1+r)² + C/(1+r)³ + ... + C/(1+r)^t
+```
+
+Factor out C:
+```
+PV = C × [1/(1+r)¹ + 1/(1+r)² + ... + 1/(1+r)^t]
+```
+
+This is a **geometric series**! Let DF = 1/(1+r) (discount factor):
+```
+Sum = DF + DF² + DF³ + ... + DF^t
+```
+
+**Geometric series formula:** For sum = x + x² + ... + x^n:
+```
+Sum = x(1 - x^n) / (1 - x)
+```
+
+Applying this where x = DF = 1/(1+r):
+```
+Annuity Factor = [1/(1+r)] × [1 - 1/(1+r)^t] / [1 - 1/(1+r)]
+```
+
+Simplify denominator: 1 - 1/(1+r) = r/(1+r)
+
+After simplification:
+```
+Annuity Factor = [1 - 1/(1+r)^t] / r = 1/r - 1/(r×(1+r)^t)
+```
+
+**Therefore:** PV = C × [1/r - 1/(r×(1+r)^t)]
+
+**Intuitive Understanding:**
+- 1/r = PV of perpetuity starting year 1
+- 1/(r×(1+r)^t) = PV of perpetuity starting year t+1
+- The difference = receiving C for exactly t years!
+
+### Deriving the Perpetuity PV Formula
+
+A perpetuity pays forever:
+```
+PV = C/(1+r) + C/(1+r)² + C/(1+r)³ + ... (infinite)
+```
+
+This is an **infinite geometric series** where x = 1/(1+r) and |x| < 1.
+
+**Infinite geometric series formula:** Sum = a / (1 - x)
+
+Where a = first term = 1/(1+r), x = common ratio = 1/(1+r):
+```
+Perpetuity Factor = [1/(1+r)] / [1 - 1/(1+r)]
+                  = [1/(1+r)] / [r/(1+r)]
+                  = 1/r
+```
+
+**Therefore:** PV = C/r
+
+**As a Limit:** Notice that as t → ∞ in the annuity formula:
+```
+1/(r×(1+r)^t) → 0
+```
+
+So the annuity formula becomes: 1/r - 0 = 1/r (the perpetuity formula!)
+
+### Deriving the Annuity FV Formula
+
+If you save C each year for t years:
+- First payment (year 1) grows for (t-1) years: C×(1+r)^(t-1)
+- Second payment (year 2) grows for (t-2) years: C×(1+r)^(t-2)
+- ...
+- Last payment (year t) grows for 0 years: C×(1+r)^0 = C
+
+Total:
+```
+FV = C × [(1+r)^(t-1) + (1+r)^(t-2) + ... + (1+r) + 1]
+```
+
+This is a geometric series: 1 + x + x² + ... + x^(t-1) where x = (1+r)
+
+**Geometric series formula:** Sum = (x^t - 1) / (x - 1)
+
+Substituting x = (1+r):
+```
+FV Factor = [(1+r)^t - 1] / [(1+r) - 1] = [(1+r)^t - 1] / r
+```
+
+**Therefore:** FV = C × [(1+r)^t - 1] / r
+
+**Relationship to PV:** FV of annuity = PV of annuity × (1+r)^t
+- Makes sense! Just compound the present value forward t periods.
+
+### Visual Timeline Example
+
+For $1,000/year for 3 years at 6%:
+
+```
+Year 0         Year 1         Year 2         Year 3
+  |              |              |              |
+  |          $1,000         $1,000         $1,000  ← Payments
+  |              |              |              |
+  |          PV=$943       PV=$890        PV=$840  ← Each payment's PV
+  |
+PV = $2,673 (sum of discounted payments)
+
+FV = $3,184 (each payment compounded to year 3)
+```
+
+### Memory Aids
+
+**PV vs FV formulas:**
+- **PV formulas**: (1+r)^t in **denominator** (discounting BACKWARD)
+- **FV formulas**: (1+r)^t in **numerator** (compounding FORWARD)
+
+**Perpetuity vs Annuity:**
+- **Perpetuity**: 1/r (simplest - pays forever)
+- **Annuity**: 1/r - something (subtract away the payments you DON'T get)
+
+**Why geometric series works:**
+- Each payment is a constant multiple of the previous one
+- Perfect for compound interest (each period multiplies by (1+r))
 
 ---
 
