@@ -6,12 +6,13 @@ Extract key concepts from textbook screenshots and generate both study notes and
 ## Workflow
 
 **Each week:**
-1. User provides screenshots of assigned chapters/sections
-2. Agent extracts content → creates structured notes in `week-X/notes.md`
-3. **User reviews notes and provides feedback/approval**
-4. **ONLY AFTER notes are finalized:** Agent generates Quizlet-ready flashcards → `week-X/flashcards.md`
-5. User copies flashcards to Quizlet for spaced repetition
-6. Check off completed week below
+1. User provides screenshots of **learning objectives, introduction, and summary** for assigned chapters (to understand scope and priorities)
+2. User provides screenshots of full chapter content
+3. Agent extracts content → creates structured notes in `week-X/notes.md` (tailored to learning objectives)
+4. **User reviews notes and provides feedback/approval**
+5. **ONLY AFTER notes are finalized:** Agent generates Quizlet-ready flashcards → `week-X/flashcards.md`
+6. User copies flashcards to Quizlet for spaced repetition
+7. Check off completed week below
 
 ## Note Structure
 
@@ -69,4 +70,4 @@ strategy/
 
 ---
 
-**Note:** Textbook edition may vary (2008 vs 2021), but core strategic concepts remain consistent across editions.
+**Note:** Textbook edition may vary (2008 vs 2021), but core strategic concepts remain consistent across editions. Use @Strategy.md for a more detailed description of the course.
