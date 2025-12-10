@@ -7,7 +7,7 @@ Extract key concepts from textbook chapters and generate both study notes and Qu
 
 **Approach Decision:**
 - **Generate notes from standard corporate finance knowledge** (no textbook screenshots required)
-- Rationale: Ch 3-14 cover standardized concepts (financial statements, valuation, NPV, WACC, etc.) that don't vary significantly between textbooks
+- Follow weekly topics from `Corporate_Finance_Weekly_Overview.md`
 - User reviews notes and flags any gaps, textbook-specific terminology, or professor emphases
 - Benefits: Much faster, focused on exam-critical concepts, comprehensive coverage
 
@@ -52,39 +52,37 @@ What is financial leverage?	Using debt to enhance return on equity (if ROA > int
 ```
 finance/
 ├── CLAUDE.md (this file)
-├── Corporate_Finance.md (course syllabus)
+├── Corporate_Finance_Weekly_Overview.md (weekly topics - SOURCE OF TRUTH)
 ├── week-1/
 │   ├── notes.md
 │   └── flashcards.md
 ├── week-2/
 │   ├── notes.md
 │   └── flashcards.md
-└── ...
+├── ...
+└── tvm-extra/ (Time Value of Money - supplementary, not in course syllabus)
 ```
 
 ## Progress Tracker
 
+**IMPORTANT:** Follow `Corporate_Finance_Weekly_Overview.md` for weekly topics. That file is the source of truth for what to study each week.
+
 **Q2 Preparation Schedule (10 weeks: Nov 8 → mid-Jan):**
 
-**Textbook Chapters to Cover (Your Edition):**
-- Chapter 3-4: Financial statements (Accounting & Measuring Performance)
-- Chapter 5-7: Valuation (Time Value of Money, Bonds, Stocks)
-- Chapter 8-9: Investment analysis (NPV, DCF Investment Decisions)
-- Chapter 11-12: Risk and return
-- Chapter 13-14: Capital structure & Financing decisions (WACC, Corporate Financing)
+See `Corporate_Finance_Weekly_Overview.md` for detailed weekly breakdown.
 
 **Completion Status:**
 
-- [ ] **Week 1** - Ch 3-4 - Financial statements (Accounting, Balance Sheet, P&L, Cash Flow)
-- [ ] **Week 2** - Ch 5 - Time Value of Money & Break-even analysis
-- [ ] **Week 3** - Ch 6-7 - Valuation (Bonds & Stocks)
-- [ ] **Week 4** - Ch 8 - Net Present Value & Investment Criteria
-- [ ] **Week 5** - Ch 9 - DCF Analysis for Investment Decisions
-- [ ] **Week 6** - Ch 11 - Introduction to Risk, Return, and Opportunity Cost
-- [ ] **Week 7** - Ch 12 - Risk, Return, and Capital Budgeting
-- [ ] **Week 8** - Ch 13 - WACC and Company Valuation
-- [ ] **Week 9** - Ch 14 - Corporate Financing & Governance (Agency Theory)
-- [ ] **Week 10** - Review & Practice problems
+- [ ] **Week 1** - Foundations of Finance & Accounting
+- [ ] **Week 2** - The Balance Sheet
+- [ ] **Week 3** - P&L Statement & Cash Flow Statement
+- [ ] **Week 4** - Forms of Capital
+- [ ] **Week 5** - Cost Theory & Break-Even Analysis
+- [ ] **Week 6** - Operational Risk & Leverage
+- [ ] **Week 7** - Financial Ratios - Solvency & Liquidity
+- [ ] **Week 8** - Financial Risk & Leverage
+- [ ] **Week 9** - Agency Theory & Information Asymmetry
+- [ ] **Week 10** - Capital Structure Theory & Integration
 
 ---
 
