@@ -108,7 +108,7 @@ runAllTests = do
     , test "addEithers (Left \"error\") (Right 5)" (Left "error") (addEithers (Left "error") (Right 5))
     , test "addEithers (Right 3) (Left \"oops\")" (Left "oops") (addEithers (Right 3) (Left "oops"))
     , test "addEithers (Left \"first\") (Left \"second\")" (Left "first") (addEithers (Left "first") (Left "second"))
-    , test "combineBoth (Right 1) (Right \"a\")" (Right (1, "a")) (combineBoth (Right 1) (Right "a"))
+    , test "combineBoth (Right 1) (Right \"a\")" (Right (1, "a") :: Either String (Int, String)) (combineBoth (Right 1) (Right "a"))
     , test "combineBoth (Left \"err\") (Right \"a\")" (Left "err" :: Either String (Int, String)) (combineBoth (Left "err") (Right "a"))
     , test "combineBoth (Right 1) (Left \"err\")" (Left "err" :: Either String (Int, String)) (combineBoth (Right 1) (Left "err"))
     ]
@@ -137,9 +137,9 @@ runAllTests = do
     , test "concatMaybes Nothing (Just \"World\")" Nothing (concatMaybes Nothing (Just "World"))
     , test "concatMaybes (Just \"Hello\") Nothing" Nothing (concatMaybes (Just "Hello") Nothing)
     , test "makeTriple (Just 1) (Just 2) (Just 3)" (Just (1, 2, 3)) (makeTriple (Just 1) (Just 2) (Just 3))
-    , test "makeTriple Nothing (Just 2) (Just 3)" Nothing (makeTriple Nothing (Just 2) (Just 3))
-    , test "makeTriple (Just 1) Nothing (Just 3)" Nothing (makeTriple (Just 1) Nothing (Just 3))
-    , test "makeTriple (Just 1) (Just 2) Nothing" Nothing (makeTriple (Just 1) (Just 2) Nothing)
+    , test "makeTriple Nothing (Just 2) (Just 3)" (Nothing :: Maybe (Int, Int, Int)) (makeTriple Nothing (Just 2) (Just 3))
+    , test "makeTriple (Just 1) Nothing (Just 3)" (Nothing :: Maybe (Int, Int, Int)) (makeTriple (Just 1) Nothing (Just 3))
+    , test "makeTriple (Just 1) (Just 2) Nothing" (Nothing :: Maybe (Int, Int, Int)) (makeTriple (Just 1) (Just 2) Nothing)
     ]
   putStrLn ""
 
